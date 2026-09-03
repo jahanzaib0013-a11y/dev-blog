@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="340" rx="16" fill="#12121c"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7c8"/></marker>
+    <marker id="r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#f0a"/></marker>
+  </defs>
+  <!-- boxes -->
+  <g>
+    <rect x="40" y="120" width="150" height="80" rx="12" fill="#1c1830" stroke="#915eff" stroke-width="1.5"/>
+    <text x="115" y="158" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">Prompt</text>
+    <text x="115" y="180" fill="#9a86d9" font-size="12" text-anchor="middle">+ schema + example</text>
+  </g>
+  <g>
+    <rect x="270" y="120" width="150" height="80" rx="12" fill="#1c1830" stroke="#915eff" stroke-width="1.5"/>
+    <text x="345" y="165" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">LLM</text>
+  </g>
+  <g>
+    <rect x="500" y="120" width="180" height="80" rx="12" fill="#1c1830" stroke="#915eff" stroke-width="1.5"/>
+    <text x="590" y="158" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">Parse &amp; Validate</text>
+    <text x="590" y="180" fill="#9a86d9" font-size="12" text-anchor="middle">against schema</text>
+  </g>
+  <g>
+    <rect x="810" y="120" width="150" height="80" rx="12" fill="#0f2d26" stroke="#00cea8" stroke-width="1.5"/>
+    <text x="885" y="158" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">Ship ✓</text>
+    <text x="885" y="180" fill="#7fd6c8" font-size="12" text-anchor="middle">valid output</text>
+  </g>
+  <!-- forward arrows -->
+  <line x1="190" y1="160" x2="262" y2="160" stroke="#7c8" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="420" y1="160" x2="492" y2="160" stroke="#7c8" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="680" y1="160" x2="802" y2="160" stroke="#00cea8" stroke-width="2" marker-end="url(#a)"/>
+  <text x="741" y="150" fill="#00cea8" font-size="12" text-anchor="middle">valid</text>
+  <!-- retry loop -->
+  <path d="M590 200 L590 280 L115 280 L115 200" fill="none" stroke="#f0a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#r)"/>
+  <text x="352" y="300" fill="#f0a" font-size="13" text-anchor="middle" font-weight="600">invalid → retry with the parser error</text>
+  <text x="500" y="46" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Validate-and-retry loop</text>
+</svg>
